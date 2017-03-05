@@ -86,7 +86,9 @@ So for example to create to boxes in one line you can write:
 
 You can find full list of supported props in `Box.js` file.
 
-### Styles
+How it works? Every prop will be converted into CSS class with [fela](http://fela.js.org). You don't have to think about it at all. In web classes will be reused and stuff. In React Native stuff will work like normal styles.
+
+### Styles (inline styles)
 
 Ok, you can set around 50 layout related props but what about styles. Well there is `style` prop but it is not working like regular `style` attribute. `just-box` is using [fela](http://fela.js.org) to create CSS. I decided that styles will be converted into css-classes just like other props. Thats why:
 
@@ -106,7 +108,7 @@ In meme world you will define *isotopes* with:
 
 ![](https://media.giphy.com/media/UI7EYk96rzq24/giphy.gif)
 
-Whit this knowledge:
+With this knowledge:
 
 ```jsx
 <Box
