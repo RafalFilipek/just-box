@@ -1,0 +1,7 @@
+lib
+node_modules
+flow-typed
+dist
+coverage
+demo
+nwb-config.js

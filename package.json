@@ -1,0 +1,67 @@
+{
+  "name": "just-box",
+  "version": "0.0.6",
+  "main": "lib/index.js",
+  "author": "Rafał Filipek <rafal.filipek@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "flow": "flow",
+    "format": "prettier --tab-width=2 --write --print-width=80 --parser=flow --single-quote --trailing-comma=es5 src/**/*",
+    "clean": "rm -rf lib",
+    "compile": "npm run clean && babel -d lib src",
+    "flow-copy": "flow-copy-source -v src lib",
+    "prepublish": "npm run clean && npm test && npm run compile && npm run flow-copy"
+  },
+  "files": [
+    "*.md",
+    "__test__",
+    "LICENSE",
+    "lib",
+    "src"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.16.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.40.0",
+    "flow-copy-source": "^1.1.0",
+    "jest": "^19.0.2",
+    "publish-please": "^2.2.0",
+    "react": "^15.4.2"
+  },
+  "dependencies": {
+    "fela": "^4.2.6",
+    "fela-plugin-fallback-value": "^4.2.6",
+    "fela-plugin-prefixer": "^4.2.6",
+    "lodash": "^4.17.4",
+    "react-fela": "^4.2.6"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "collectCoverage": true
+  }
+}

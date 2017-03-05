@@ -1,0 +1,9 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+module.system=haste
+unsafe.enable_getters_and_setters=true
