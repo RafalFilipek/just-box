@@ -1,9 +1,11 @@
 WIP! (last tests and fixes)
 ---
 
+
 # just-box
 
----
+[![Build Status](https://travis-ci.org/RafalFilipek/just-box.svg?branch=master)](https://travis-ci.org/RafalFilipek/just-box)
+[![Code Coverage](https://img.shields.io/codecov/c/github/RafalFilipek/just-box/master.svg)](https://codecov.io/gh/RafalFilipek/just-box)
 
 Just-Box helps you create universal layouts in your [React](https://facebook.github.io/react) and [React-Native](https://facebook.github.io/react-native) apps. It's based on [Daniel Steigerwald idea](https://medium.com/@steida?source=post_header_lockup) implemented in [este](https://github.com/este/este) boilerplate. `just-box` is a less opinionated standalone version with some additions and tweaks.
 
