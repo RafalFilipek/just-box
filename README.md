@@ -1,4 +1,4 @@
-WIP! (last tests and fixes)
+WIP! (last tests and fixes, React Native is broken :/)
 ---
 
 
