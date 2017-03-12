@@ -17,10 +17,8 @@ type Props = {
   box: string | RenderFunc,
   text: string | RenderFunc,
   renderer: any,
-  getFelaMountNode: () => HTMLElement,
+  getFelaMountNode: null | () => HTMLElement,
 };
-
-const noop = () => {};
 
 export default class ConfigBox extends PureComponent {
   props: Props;
@@ -39,7 +37,7 @@ export default class ConfigBox extends PureComponent {
     defaultTextStyles: {},
     baseSize: 16,
     unit: units.REM,
-    getFelaMountNode: isReactNative ? noop : defaultFelaMountPointProvider,
+    getFelaMountNode: isReactNative ? null : defaultFelaMountPointProvider,
   };
 
   getChildContext() {
@@ -57,7 +55,7 @@ export default class ConfigBox extends PureComponent {
     return (
       <Provider
         renderer={this.props.renderer}
-        mountNode={this.props.getFelaMountNode()}
+        mountNode={this.props.getFelaMountNode && this.props.getFelaMountNode()}
       >
         {this.props.children}
       </Provider>

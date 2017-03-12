@@ -1,0 +1,33 @@
+{
+	"name": "example",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"just-box": "^0.1.0",
+		"react": "~15.4.1",
+		"react-dom": "^15.4.2",
+		"react-native": "0.42.0"
+	},
+	"devDependencies": {
+		"babel-jest": "19.0.0",
+		"babel-loader": "^6.3.2",
+		"babel-plugin-transform-class-properties": "^6.23.0",
+		"babel-plugin-transform-object-rest-spread": "^6.23.0",
+		"babel-preset-env": "^1.2.0",
+		"babel-preset-react": "^6.23.0",
+		"babel-preset-react-native": "1.9.1",
+		"flow-bin": "0.38",
+		"html-webpack-plugin": "^2.28.0",
+		"jest": "19.0.2",
+		"react-test-renderer": "~15.4.1",
+		"webpack": "^2.2.1",
+		"webpack-dev-server": "^2.4.1"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
