@@ -33,9 +33,10 @@ Now you have to configure `just-box`. To do this you will use a special `Box` ca
 
 ```jsx
 import { ConfigBox } from 'just-box';
+import renderer from 'just-box/lib/webRenderer';
 
 const App = ({ children }) => (
-  <ConfigBox unit="rem" baseSize={16} box="div" text="span">
+  <ConfigBox unit="rem" baseSize={16} box="div" text="span" renderer={renderer}>
     {children}
   </ConfigBox>
 )
@@ -44,10 +45,11 @@ const App = ({ children }) => (
 **NATIVE**
 
 ```jsx
-import { ConfigBox, nativeRenderer } from 'just-box';
+import { ConfigBox } from 'just-box';
+import renderer from 'just-box/lib/nativeRenderer';
 
 const App = ({ children }) => (
-  <ConfigBox unit="rem" baseSize={16} box={View} text={Text} felaRenderer={nativeRenderer}>
+  <ConfigBox unit="rem" baseSize={16} box={View} text={Text} renderer={renderer}>
     {children}
   </ConfigBox>
 )
