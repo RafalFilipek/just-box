@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header.js';
+import Header from './BaseHeader.js';
 
 export default (props) => (
   <Header style={styles.header}>
