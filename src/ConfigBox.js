@@ -5,8 +5,8 @@ import { Provider } from 'react-fela';
 
 import { units, type UnitType } from './unit';
 import { type MixedType, type RenderFunc } from './sharedTypes';
-import defaultFelaRenderer from './defaultFelaRenderer';
-import defaultFelaMountPoinProvider from './defaultFelaMountPoinProvider';
+import defaultFelaMountPointProvider from './defaultFelaMountPointProvider';
+import isReactNative from './isReactNative';
 
 type Props = {
   baseSize: number,
@@ -16,9 +16,11 @@ type Props = {
   defaultTextStyles?: { [key: string]: MixedType },
   box: string | RenderFunc,
   text: string | RenderFunc,
-  felaRenderer?: any,
+  renderer: any,
   getFelaMountNode: () => HTMLElement,
 };
+
+const noop = () => {};
 
 export default class ConfigBox extends PureComponent {
   props: Props;
@@ -37,8 +39,7 @@ export default class ConfigBox extends PureComponent {
     defaultTextStyles: {},
     baseSize: 16,
     unit: units.REM,
-    felaRenderer: defaultFelaRenderer,
-    getFelaMountNode: defaultFelaMountPoinProvider,
+    getFelaMountNode: isReactNative ? noop : defaultFelaMountPointProvider,
   };
 
   getChildContext() {
@@ -55,7 +56,7 @@ export default class ConfigBox extends PureComponent {
   render() {
     return (
       <Provider
-        renderer={this.props.felaRenderer}
+        renderer={this.props.renderer}
         mountNode={this.props.getFelaMountNode()}
       >
         {this.props.children}

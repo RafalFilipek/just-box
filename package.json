@@ -1,6 +1,6 @@
 {
   "name": "just-box",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "author": "Rafał Filipek <rafal.filipek@gmail.com>",
   "license": "MIT",
@@ -39,14 +39,11 @@
   },
   "dependencies": {
     "fela": "^4.2.6",
+    "fela-native": "^4.2.6",
     "fela-plugin-fallback-value": "^4.2.6",
     "fela-plugin-prefixer": "^4.2.6",
     "lodash": "^4.17.4",
     "react-fela": "^4.2.6"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
   },
   "babel": {
     "presets": [

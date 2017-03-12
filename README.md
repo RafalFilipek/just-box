@@ -2,7 +2,7 @@
 
 ---
 
-Just-Box helps you create universal layouts in your [React](https://facebook.github.io/react) and [React-Native](https://facebook.github.io/react-native) apps. It's based on [Daniel Steigerwald idea](https://medium.com/@steida?source=post_header_lockup) implemented in [este](https://github.com/este/este) boilerplate. `just-box` is less opinionated standalone version with some additions and tweaks.
+Just-Box helps you create universal layouts in your [React](https://facebook.github.io/react) and [React-Native](https://facebook.github.io/react-native) apps. It's based on [Daniel Steigerwald idea](https://medium.com/@steida?source=post_header_lockup) implemented in [este](https://github.com/este/este) boilerplate. `just-box` is a less opinionated standalone version with some additions and tweaks.
 
 ## Installation
 
@@ -18,10 +18,12 @@ npm install -S just-box
 
 Before you start creating layouts you have to answer two questions.
 
-1. Will you use `px`  or `rem` units as a default.
+1.  `px`  or `rem` units as a default.
 2. If you will use `rem` unit, what is base font size?
 
-Now you have to configure `just-box`. To do this you will use special `Box` called `ConfigBox`.
+Now you have to configure `just-box`. To do this you will use a special `Box` called `ConfigBox`.
+
+**WEB**
 
 ```jsx
 import { ConfigBox } from 'just-box';
@@ -33,9 +35,21 @@ const App = ({ children }) => (
 )
 ```
 
-You may noticed `box` and `text` props. Those are actual HTML tags that `just-box` will use.
+**NATIVE**
 
-You will also need some `style` tag in you document. If you don't want to play with custom mount nodes and stuff just add in `head` section of your document:
+```jsx
+import { ConfigBox, nativeRenderer } from 'just-box';
+
+const App = ({ children }) => (
+  <ConfigBox unit="rem" baseSize={16} box={View} text={Text} felaRenderer={nativeRenderer}>
+    {children}
+  </ConfigBox>
+)
+```
+
+You may have noticed `box` and `text` props. These are actual HTML tags / React Components that `just-box` will use.
+
+You also need a `style` tag in you document. If you don't want to play with custom mount nodes and stuff just add in a `head` section of your document:
 
 ```html
 <style id="stylesheet"></style>
@@ -75,7 +89,7 @@ When you're building new applications you care about two things: `layout` and `s
 
 This box will have `margin="1rem"`, `padding-bottom=.5rem` and `position=absolute`.
 
-So for example to create to boxes in one line you can write:
+So, for example, to create two boxes in one line you can write:
 
 ```jsx
 <Box display="flex" flexDirection="row">

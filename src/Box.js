@@ -89,7 +89,7 @@ export type BoxProps = {
 
   children?: any,
   isotope?: string[],
-  style?: Object,
+  style?:  Object,
   isText?: boolean,
   innerRef?: Function,
 };
