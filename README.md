@@ -1,6 +1,11 @@
+WIP! (last tests and fixes, React Native is broken :/)
+---
+
+
 # just-box
 
----
+[![Build Status](https://travis-ci.org/RafalFilipek/just-box.svg?branch=master)](https://travis-ci.org/RafalFilipek/just-box)
+[![Code Coverage](https://img.shields.io/codecov/c/github/RafalFilipek/just-box/master.svg)](https://codecov.io/gh/RafalFilipek/just-box)
 
 Just-Box helps you create universal layouts in your [React](https://facebook.github.io/react) and [React-Native](https://facebook.github.io/react-native) apps. It's based on [Daniel Steigerwald idea](https://medium.com/@steida?source=post_header_lockup) implemented in [este](https://github.com/este/este) boilerplate. `just-box` is a less opinionated standalone version with some additions and tweaks.
 
@@ -100,9 +105,11 @@ So, for example, to create two boxes in one line you can write:
 
 You can find full list of supported props in `Box.js` file.
 
-### Styles
+How does it works? Every prop will be converted into a CSS class with [fela](http://fela.js.org). You don't have to think about it at all. In web classes will be reused. In React Native stuff will work like normal styles.
 
-Ok, you can set around 50 layout related props but what about styles. Well there is `style` prop but it is not working like regular `style` attribute. `just-box` is using [fela](http://fela.js.org) to create CSS. I decided that styles will be converted into css-classes just like other props. Thats why:
+### Styles (inline styles)
+
+Ok, you can set around 50 layout related props but what about styles. Well, there is a `style` prop but it does not work like a regular `style` attribute. `just-box` uses [fela](http://fela.js.org) to create CSS. I've decided that styles will be converted into css-classes just like other props.
 
 ```jsx
 <Box margin={1} style={{ backgroundColor: 'red' }} />
@@ -120,7 +127,7 @@ In meme world you will define *isotopes* with:
 
 ![](https://media.giphy.com/media/UI7EYk96rzq24/giphy.gif)
 
-Whit this knowledge:
+With this knowledge:
 
 ```jsx
 <Box
@@ -184,13 +191,13 @@ import { Box, Text } from 'just-box';
 
 ### Units
 
-You can user `rem` or `px` as a default unit. But there are cases where for example `px` are required.
+You can user `rem` or `px` as a default unit. But there are cases where `px` are required.
 
 ```jsx
 <Box borderWidth={1} {...props} />
 ```
 
-If your default unit is `rem` you will get `16px` border. What you can do?
+If your default unit is `rem` you will get `16px` border. What should yo do?
 
 **Web + Native solution**
 
@@ -222,15 +229,15 @@ So in case you're using `rem` and you want `1px` you can write:
 
 **Web solution**
 
-Just write `1px` as a string. You're all set.
+Just write `1px` as a string and you're all set.
 
 ### Platform specific styles
 
-We want universal components but there are style implementations are not the same. In react native we have `marginVertical` or `paddingHorizontal`. There is this `display` CSS rule not supported in native.
+We would like universal components, but there are style implementations that not the same. In react native we have `marginVertical` or `paddingHorizontal`. There is this `display` CSS rulethat is not supported in native.
 
-`just-box` has simple utility for that. It converts, omit, or change platform specific rules (`web` -> `native` and `native` -> `web`). It's not perfect and quite small but good enough for start.
+`just-box` has simple utility for that. It converts, omit, or change platform specific rules (`web` -> `native` and `native` -> `web`). It's not perfect, and quite small, but good for a start.
 
-You can always deal with such styles by your own.
+You can always deal with these types of styles on your own.
 
 ```jsx
 // Button.js
@@ -246,7 +253,7 @@ export default ({ children }) => (
 
 ### Custom Box ,`as` prop
 
-In case you want use custom component as a `Box` (or `Text`) you can use `as` prop. It accepts string or Component. All you have to do is accept `className` and `style` prop from `Box` component.
+In case you want to use a custom component as a `Box` (or `Text`) you can use `as` prop. It accepts string or Component. All you have to do is accept `className` and `style` prop from `Box` component.
 
 ```jsx
 <Box as="section" padding={1}>Hello</Box>
@@ -274,7 +281,7 @@ FlexBox is cool. So I decided to add `FlexBox` component into `just-box`. It wor
 
 ### ConfigBox
 
-Lets back to `ConfigBox`. Here are all props you can set:
+Lets back to `ConfigBox`. Here are all the props you can set:
 
 **`unit`** - `rem` or `px`. `rem` by default
 
@@ -296,6 +303,6 @@ const styles = {
 
 **`defaultTextstyles`** - ^ but for `Text`
 
-**`felaRenderer`** - custom fela rendered object. By default `just-box` is using fela with two plugins `fela-plugin-prefixer` and `fela-plugin-fallback-value`. You can also import `defaultFelaRenderer` from 'just-box' in your app to set up for example server-side rendering. After that just pass it with this prop.
+**`renderer`** - custom fela rendered object. By default `just-box` uses fela with two plugins `fela-plugin-prefixer` and `fela-plugin-fallback-value`. You can also import `defaultFelaRenderer` from 'just-box' in your app to set up, for example server-side rendering. After that just pass it with this prop.
 
-**`getFelaMountNode`** - valid only for Web. Fela has to render styles somewhere. So it requires some `style` tag. You can provide custom function for that.
+**`getFelaMountNode`** - valid only for Web. Fela has to render styles somewhere. So it requires a `style` tag. You can provide a custom function for that.
