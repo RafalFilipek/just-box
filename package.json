@@ -45,16 +45,6 @@
     "lodash": "^4.17.4",
     "react-fela": "^4.2.6"
   },
-  "babel": {
-    "presets": [
-      "latest",
-      "react"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
-  },
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
