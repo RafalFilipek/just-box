@@ -1,5 +1,7 @@
 # just-box
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RafalFilipek/just-box.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/RafalFilipek/just-box.svg?branch=master)](https://travis-ci.org/RafalFilipek/just-box)
 [![Code Coverage](https://img.shields.io/codecov/c/github/RafalFilipek/just-box/master.svg)](https://codecov.io/gh/RafalFilipek/just-box)
 
