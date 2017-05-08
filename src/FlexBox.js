@@ -73,16 +73,13 @@ const flexKeys = Object.keys(flexMap);
 type FlexBoxProps = FlexProps & BoxProps;
 
 const FlexBox = (props: FlexBoxProps) => {
-  const flex = Object.keys(props).reduce(
-    (memo, name) => {
-      const el = flexMap[name];
-      if (el) {
-        memo[el.name] = el.value;
-      }
-      return memo;
-    },
-    {}
-  );
+  const flex = Object.keys(props).reduce((memo, name) => {
+    const el = flexMap[name];
+    if (el) {
+      memo[el.name] = el.value;
+    }
+    return memo;
+  }, {});
   const additionalStyles = isReactNative ? {} : { display: 'flex' };
 
   return <Box {...additionalStyles} {...flex} {...omit(props, flexKeys)} />;

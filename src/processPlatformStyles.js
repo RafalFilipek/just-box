@@ -84,8 +84,8 @@ const modifiers: Modifiers = {
 type ProcesFuncType = (name: string, value: MixedType) => ReturnType;
 
 const process: ProcesFuncType = (name, value, isReactNative) => {
-  const mod = modifiers[name] &&
-    modifiers[name][isReactNative ? 'native' : 'web'];
+  const mod =
+    modifiers[name] && modifiers[name][isReactNative ? 'native' : 'web'];
   if (!mod) {
     return value;
   }

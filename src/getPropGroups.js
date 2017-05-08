@@ -33,8 +33,8 @@ const getBoxPropGroups = (
       return memo;
     }
     const isIsotope: boolean = isotope.indexOf(name) !== -1;
-    const isCSS: boolean = cssProps.indexOf(name) !== -1 ||
-      style[name] !== undefined;
+    const isCSS: boolean =
+      cssProps.indexOf(name) !== -1 || style[name] !== undefined;
 
     if (isIsotope || isCSS) {
       if (Array.isArray(value)) {

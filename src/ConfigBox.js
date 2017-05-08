@@ -1,6 +1,7 @@
 // @flow
 
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import { PropTypes } from 'prop-types';
 import { Provider } from 'react-fela';
 
 import { units, type UnitType } from './unit';
@@ -17,7 +18,7 @@ type Props = {
   box: string | RenderFunc,
   text: string | RenderFunc,
   renderer: any,
-  getFelaMountNode: null | () => HTMLElement,
+  getFelaMountNode: null | (() => HTMLElement),
 };
 
 export default class ConfigBox extends PureComponent {

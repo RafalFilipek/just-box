@@ -1,6 +1,7 @@
 // @flow
 
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import { PropTypes } from 'prop-types';
 
 import meaningfulCSSProps from './meaningfulCSSProps';
 import { type UnitType, units } from './unit';
@@ -89,7 +90,7 @@ export type BoxProps = {
 
   children?: any,
   isotope?: string[],
-  style?:  Object,
+  style?: Object,
   isText?: boolean,
   innerRef?: Function,
 };
