@@ -1,6 +1,6 @@
 {
   "name": "just-box",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "main": "lib/index.js",
   "author": "Rafał Filipek <rafal.filipek@gmail.com>",
   "license": "MIT",
