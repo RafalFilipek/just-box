@@ -35,7 +35,7 @@
     "flow-copy-source": "^1.1.0",
     "jest": "^20.0.0",
     "publish-please": "^2.2.0",
-    "react": "^15.4.2"
+    "react": "^16.6.3"
   },
   "dependencies": {
     "fela": "^4.2.6",
