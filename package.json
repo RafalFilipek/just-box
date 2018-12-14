@@ -38,7 +38,7 @@
     "react": "^15.4.2"
   },
   "dependencies": {
-    "fela": "^4.2.6",
+    "fela": "^10.0.1",
     "fela-native": "^4.2.6",
     "fela-plugin-fallback-value": "^4.2.6",
     "fela-plugin-prefixer": "^4.2.6",
