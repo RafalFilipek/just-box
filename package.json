@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "fela": "^4.2.6",
-    "fela-native": "^4.2.6",
+    "fela-native": "^10.0.2",
     "fela-plugin-fallback-value": "^4.2.6",
     "fela-plugin-prefixer": "^4.2.6",
     "lodash": "^4.17.4",
