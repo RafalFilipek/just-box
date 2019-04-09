@@ -41,7 +41,7 @@
     "fela": "^4.2.6",
     "fela-native": "^4.2.6",
     "fela-plugin-fallback-value": "^4.2.6",
-    "fela-plugin-prefixer": "^4.2.6",
+    "fela-plugin-prefixer": "^10.2.4",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.8",
     "react-fela": "^4.2.6"
